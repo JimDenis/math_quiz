@@ -23,6 +23,7 @@ var int = document.getElementById("HSint");
 var HSB = document.getElementById("HSbutton");
 
 
+// If they guess the first answer, checks to see if it's correct
 function guess0() {
 //  console.log("In Guess 0");
 //  console.log(option0[currIndex]);
@@ -45,6 +46,7 @@ function guess0() {
   //askQuestions();
 }
 
+// If they guess the second answer, checks to see if it's correct
 function guess1() {
   console.log("In Guess 1");
   console.log(option1[currIndex]);
@@ -66,6 +68,7 @@ function guess1() {
   
 }
 
+// If they guess the third answer, checks to see if it's correct
 function guess2() {
   console.log("In Guess 2");
   console.log(option2[currIndex]);
@@ -87,6 +90,7 @@ function guess2() {
   
 }
 
+// If they guess the fourth answer, checks to see if it's correct
 function guess3() {
 
   console.log("In Guess 3");
@@ -130,6 +134,7 @@ function guess3() {
 //  }, 1000);
 //} 
 
+// This ask the questions & give possible answers
 function askQuestions(event) {
 //  console.log(numOfCorr);
 //  console.log(numOfIncorr);
@@ -153,7 +158,7 @@ function askQuestions(event) {
   }
   
 } 
-
+//This actually starts the clock & get ready for the questions 
 function startGame() {
 
   document.getElementById('start').style.display = 'none';
@@ -176,6 +181,7 @@ function startGame() {
 
 }
 
+// End the game/quiz. Gets total score & figures high score
 function endGame () {
 
   holdRemainingTime = timeLeft;  
@@ -225,6 +231,7 @@ function endGame () {
   
 }
 
+// This waits for the start button to be hit 
 function startIt() {
  // console.log("before 1");
   startGame();
@@ -232,6 +239,7 @@ function startIt() {
 //  console.log("after 1")
 }
 
+// Enter Name if they got high score
 function enterName() {
   var HSinitals =  document.getElementById("HSint").value;
   localStorage.setItem("INT", HSinitals) ;
@@ -248,6 +256,7 @@ function enterName() {
 //  console.log("after 1")
 }
 
+//Global Vars
 var timeLeft = 60;
 var iDone = false; 
 var currIndex = -1
@@ -256,6 +265,8 @@ var numOfIncorr = 0;
 var timeInterval = 0;
 var gameOver = false;
 
+
+// Button listeners to start the process
 SU.addEventListener("click", startIt);
 A0.addEventListener("click", guess0);
 A1.addEventListener("click", guess1);
